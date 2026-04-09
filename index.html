@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fish Feed Calculator</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        input { margin: 10px; padding: 8px; }
+        button { padding: 10px; background: green; color: white; }
+    </style>
+</head>
+<body>
+
+<h2>Fish Feed Calculator</h2>
+
+<input type="number" id="fish" placeholder="Number of fish"><br>
+<input type="number" id="weight" placeholder="Avg weight (grams)"><br>
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculate() {
+    let fish = document.getElementById("fish").value;
+    let weight = document.getElementById("weight").value;
+
+    let feed = fish * weight * 0.03 / 1000;
+
+    document.getElementById("result").innerHTML =
+        "Daily Feed Required: " + feed.toFixed(2) + " kg";
+}
+</script>
+
+</body>
+</html>
